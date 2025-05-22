@@ -1,0 +1,46 @@
+import sender_stand_request
+
+def positive_assert(kit_body):
+    response = sender_stand_request.create_kit(kit_body)
+    assert response.status_code == 201
+    assert response.json()["name"] == kit_body
+
+def negative_assert_code_400(kit_body):
+    response = sender_stand_request.create_kit(kit_body)
+    assert response.status_code == 400
+
+#prueba 1
+def test_create_kit_with_name_length_1_should_return_status_201_and_correct_name():
+    positive_assert("a")
+
+#prueba 2
+def test_create_kit_with_name_length_511_should_return_status_201_and_correct_name():
+    positive_assert("AbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdAbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabC")
+
+#prueba 3
+def test_create_kit_with_empty_name_should_return_status_400():
+    negative_assert_code_400("")
+
+#prueba 4
+def test_create_kit_with_name_length_512_should_return_status_400():
+    negative_assert_code_400("AbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdAbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcD")
+
+#prueba 5
+def test_create_kit_with_name_including_special_characters_should_return_status_201_and_correct_name():
+    positive_assert("№%@\",")
+
+#prueba 6
+def test_create_kit_with_name_including_spaces_should_return_status_201_and_correct_name():
+    positive_assert(" A Aaa ")
+
+#prueba 7
+def test_create_kit_with_name_including_numbers_should_return_status_201_and_correct_name():
+    positive_assert("123")
+
+#prueba 8
+def test_create_kit_with_no_name_parameter_should_return_status_400():
+    negative_assert_code_400(None)
+
+#prueba 9
+def test_create_kit_with_name_as_number_should_return_status_400():
+    negative_assert_code_400(123)
