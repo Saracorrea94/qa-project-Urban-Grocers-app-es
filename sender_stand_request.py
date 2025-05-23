@@ -24,5 +24,3 @@ def create_kit(kit_body=None):
     auth_token = get_user_token()
     kit_body = {"name": kit_body} if kit_body is not None else {}
     return post_new_client_kit(auth_token, kit_body)
-
-
