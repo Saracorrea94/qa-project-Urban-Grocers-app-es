@@ -1,89 +1,110 @@
-# 🛒 Proyecto de Pruebas API - URBAN GROCERS
+🛒 API Testing Project - URBAN GROCERS
+🚀 Project Overview
+This project automates testing for the Urban Grocers API, an application that allows users to manage custom kits.
+The main goal is to validate the creation of kits through the corresponding endpoint, focusing specifically on different input scenarios for the name field in the request body.
 
-## 🚀 Descripción
+The tests ensure the API handles various cases correctly, including:
 
-Este proyecto automatiza pruebas para la API de **Urban Grocers**, una aplicación que permite gestionar kits personalizados.  
-Las pruebas están enfocadas en validar la creación de kits a través del endpoint correspondiente, específicamente verificando diferentes casos para el campo `name` en el request.
+Minimum and maximum character length validations
 
-El objetivo principal es asegurar que la API responda correctamente ante distintas entradas, incluyendo:
+Special character inclusion
 
-- Validaciones de longitud mínima y máxima.
-- Inclusión de caracteres especiales.
-- Ausencia del campo `name`.
-- Tipos de datos incorrectos.
+Missing name field
 
-## 📚 Fuente de documentación
+Invalid data types
 
-La documentación de la API fue consultada a través de **apiDoc**, disponible en:  
+📚 Documentation Source
+The API documentation was accessed via apiDoc at:
 https://cnt-101beed5-59ed-4630-a31b-512ed1ea1f59.containerhub.tripleten-services.com/docs/
 
-## 🧪 Tecnologías y técnicas utilizadas
+💻 Technologies Used
+Python 3.x
 
-- **Python 3.x**
-- **Pytest** para la ejecución de pruebas automatizadas.
-- **Requests** para realizar peticiones HTTP a la API.
-- **Programación modular**: el proyecto se divide en archivos reutilizables como `configuration.py`, `data.py`, y `sender_stand_request.py`.
-- **Buenas prácticas en pruebas automatizadas**, como separación entre pruebas positivas y negativas.
+Pytest for running automated test cases
 
-## ⚙️ Requisitos previos
+Requests library for HTTP API calls
 
-Antes de ejecutar el proyecto, asegúrate de contar con lo siguiente:
+Modular programming: reusable and organized code across files like configuration.py, data.py, and sender_stand_request.py
 
-- Python 3.x instalado.
-- Acceso a una terminal o consola.
-- PyCharm o cualquier editor de código.
-- Git configurado (opcional, si vas a cargarlo en GitHub).
+Best practices in automated testing, including separation of positive and negative test cases
 
-## 📦 Instalación de librerías
+👩‍💼 Key Responsibilities
+Designed and developed automated tests for the create_kit endpoint with a focus on input validation for the name field
 
-Para instalar las dependencias necesarias, ejecuta:
+Structured test coverage into positive and negative test cases to ensure comprehensive validation
 
-```bash
+Created reusable functions for API requests to improve code maintainability
+
+Used parameterized inputs to efficiently test edge cases and boundary conditions
+
+🚀 Impact & Achievements
+Improved test efficiency by using modular and reusable code components
+
+Identified inconsistencies in API behavior when handling invalid inputs
+
+Established a clean structure for scalable test case additions in future iterations
+
+⚙️ Requirements
+Before running the project, make sure you have:
+
+Python 3.x installed
+
+Terminal or command line access
+
+A code editor (e.g., PyCharm)
+
+Git configured (optional, if uploading to GitHub)
+
+📦 Installing Dependencies
+To install required libraries, run:
+
+bash
+Copiar
+Editar
 pip install requests
 pip install pytest
-📁 Estructura del proyecto
+📁 Project Structure
+graphql
+Copiar
+Editar
+qa-project-Urban-Grocers-app-en/
+├── configuration.py             # URL and endpoint configuration
+├── data.py                      # Data and headers for requests
+├── sender_stand_request.py      # Functions to send API requests
+└── create_kit_name_kit_test.py  # Automated test cases using Pytest
+▶️ How to Run the Tests
+Open a terminal and navigate to the root folder of the project. Example:
+
 bash
 Copiar
 Editar
-qa-project-Urban-Grocers-app-es/
-├── configuration.py             # Configuración de URL y endpoints
-├── data.py                      # Datos y headers para las peticiones
-├── sender_stand_request.py      # Funciones para llamadas a la API
-└── create_kit_name_kit_test.py  # Pruebas automatizadas con pytest
-
-
-## ▶️ ¿Cómo ejecutar las pruebas?
-
-1. Abre una terminal y navega a la carpeta raíz del proyecto. Por ejemplo:
-
-```bash
-cd C:/Users/sarac/projects/qa-project-Urban-Grocers-app-es
-Asegúrate de tener instalado pytest. Si no lo tienes, puedes instalarlo con:
+cd C:/Users/sarac/projects/qa-project-Urban-Grocers-app-en
+Make sure pytest is installed. If not, install it with:
 
 bash
 Copiar
 Editar
 pip install pytest
-
-2. Para ejecutar todas las pruebas del proyecto, usa el siguiente comando:
+To run all test files in the project, use:
 
 bash
 Copiar
 Editar
 pytest .
+This will automatically detect and run all test files matching the pattern test_*.py or *_test.py.
 
-Esto buscará automáticamente todos los archivos de prueba (test_*.py o *_test.py) en el directorio actual y subdirectorios.
-
-3. Si deseas ejecutar solo un archivo específico, por ejemplo create_kit_name_kit_test.py, usa:
+To run a specific test file, such as create_kit_name_kit_test.py, use:
 
 bash
 Copiar
 Editar
 pytest create_kit_name_kit_test.py
-
-4. Para ver una salida más detallada de los resultados, puedes agregar el flag -v (verbose):
+To get more detailed output, add the verbose flag:
 
 bash
 Copiar
 Editar
 pytest -v
+👤 Author
+Developed by Sara Correa
+TripleTen QA Engineer Bootcamp Graduate
