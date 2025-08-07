@@ -16,10 +16,12 @@ Missing name field
 Invalid data types
 
 📚 Documentation Source
+
 The API documentation was accessed via apiDoc at:
 https://cnt-101beed5-59ed-4630-a31b-512ed1ea1f59.containerhub.tripleten-services.com/docs/
 
 💻 Technologies Used
+
 Python 3.x
 
 Pytest for running automated test cases
@@ -30,7 +32,9 @@ Modular programming: reusable and organized code across files like configuration
 
 Best practices in automated testing, including separation of positive and negative test cases
 
+
 👩‍💼 Key Responsibilities
+
 Designed and developed automated tests for the create_kit endpoint with a focus on input validation for the name field
 
 Structured test coverage into positive and negative test cases to ensure comprehensive validation
@@ -39,14 +43,18 @@ Created reusable functions for API requests to improve code maintainability
 
 Used parameterized inputs to efficiently test edge cases and boundary conditions
 
+
 🚀 Impact & Achievements
+
 Improved test efficiency by using modular and reusable code components
 
 Identified inconsistencies in API behavior when handling invalid inputs
 
 Established a clean structure for scalable test case additions in future iterations
 
+
 ⚙️ Requirements
+
 Before running the project, make sure you have:
 
 Python 3.x installed
@@ -57,6 +65,7 @@ A code editor (e.g., PyCharm)
 
 Git configured (optional, if uploading to GitHub)
 
+
 📦 Installing Dependencies
 To install required libraries, run:
 
@@ -65,7 +74,9 @@ Copiar
 Editar
 pip install requests
 pip install pytest
+
 📁 Project Structure
+
 graphql
 Copiar
 Editar
@@ -74,7 +85,9 @@ qa-project-Urban-Grocers-app-en/
 ├── data.py                      # Data and headers for requests
 ├── sender_stand_request.py      # Functions to send API requests
 └── create_kit_name_kit_test.py  # Automated test cases using Pytest
+
 ▶️ How to Run the Tests
+
 Open a terminal and navigate to the root folder of the project. Example:
 
 bash
@@ -107,6 +120,8 @@ bash
 Copiar
 Editar
 pytest -v
+
 👤 Author
+
 Developed by Sara Correa
 TripleTen QA Engineer Bootcamp Graduate
